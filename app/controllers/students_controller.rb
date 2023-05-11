@@ -29,7 +29,8 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
 
     if @student.update(student_params)
-      redirect_to @student
+
+      redirect_to root_path, status: :see_other
     else
       render :edit, status: :unprocessable_entity
     end

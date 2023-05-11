@@ -12,6 +12,7 @@
     <th>date Birth</th>
     <th>Weight</th>
     <th>Email</th>
+    <th>Color</th>
     <th>Actions</th>
   </tr>
     </thead>
@@ -23,6 +24,9 @@
     <td> <%= student.date_birth %></td>
     <td> <%= student.weight %></td>
     <td> <%= student.email %></td>
+    <td> <%= student.color %></td>
+    <td><%= button_to 'Edit', edit_student_path(student), method: 'get'%>
+    <%= button_to 'Remove', student_path(student), method: 'delete', data: { confirm: 'Are you sure?' } %></td>
   </tr>
   <% end %>
   </tbody>

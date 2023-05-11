@@ -1,21 +1,35 @@
 <%= form_with model: student do |form| %>
-  <div>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
-    <% student.errors.full_messages_for(:name).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
+  <div class="mb-3">
+    <%= form.label :name, style: "display: block", class: "form-label"%>
+    <%= form.text_field :name, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :genre %><br>
-    <%= form.text_area :genre %><br>
-    <% student.errors.full_messages_for(:genre).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
+  <div class="mb-3">
+    <%= form.label :genre, style:"display: block", class:"form-label" %>
+    <%= form.text_field :genre, class:"form-control" %>
   </div>
 
-  <div>
+    <div class="mb-3">
+    <%= form.label :date_birth, style:"display: block", class:"form-label" %>
+    <%=form.date_field (:date_birth), class:"form-control" %>
+  </div>
+
+    <div class="mb-3">
+    <%= form.label :weight, style:"display: block", class:"form-label" %>
+    <%= form.text_field :weight, class:"form-control" %>
+  </div>
+
+    <div class="mb-3">
+    <%= form.label :email, style:"display: block", class:"form-label" %>
+    <%=form.email_field (:email), class:"form-control" %>
+  </div>
+
+    <div class="mb-3">
+    <%= form.label :color, style:"display: block", class:"form-label" %>
+    <%=form.text_field :color, class:"form-control" %>
+  </div>
+
+  <div class="mb-3">
     <%= form.submit %>
   </div>
 <% end %>
