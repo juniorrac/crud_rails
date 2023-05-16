@@ -9,6 +9,8 @@ class StudentsController < ApplicationController
 
   def new
     @student = Student.new
+
+    redirect_to root_path, status: :see_other
   end
 
   def create
